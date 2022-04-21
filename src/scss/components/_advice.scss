@@ -1,0 +1,91 @@
+@use "../abstracts/variables/colors" as c;
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.advice {
+  position: relative;
+  background-image: url("/assets/images/pattern-divider-mobile.svg");
+  background-repeat: no-repeat;
+  background-position: center calc(100% - 4.5rem);
+  background-color: c.$dark-grayish-blue;
+  max-width: 33.75rem;
+  padding: 2.813rem 1.5rem 7.938rem;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  border-radius: 1rem;
+
+  @media screen and (min-width: 48rem) {
+    min-width: 30rem;
+    background-image: url("/assets/images/pattern-divider-desktop.svg");
+  }
+
+  &__title {
+    margin-top: 0;
+    margin-bottom: 2.188rem;
+    font-size: 1rem;
+    font-weight: normal;
+    text-transform: uppercase;
+    letter-spacing: 0.188rem;
+    color: c.$neon-green;
+  }
+
+  &__text {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 1.75rem;
+    font-weight: 800;
+
+    &--error {
+      color: c.$red-light;
+    }
+  }
+
+  &__button {
+    display: grid;
+    place-items: center;
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    background-color: c.$neon-green;
+    width: 4rem;
+    height: 4rem;
+    transform: translate(-50%, 50%);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+
+    @media (hover: hover) {
+      transition: transform 0.25s ease-in-out;
+
+      &:hover {
+        transform: translate(-50%, 50%) scale(1.1);
+      }
+    }
+
+    &:disabled {
+      cursor: wait;
+    }
+
+    &:focus,
+    &:focus-visible {
+      outline: 0.25rem dashed c.$neon-green;
+      outline-offset: 0.5rem;
+    }
+
+    &:focus:not(:focus-visible) {
+      outline: none;
+    }
+  }
+
+  &__image-spin {
+    animation: spin 1s linear infinite;
+  }
+}

@@ -1,0 +1,29 @@
+@use "../abstracts/variables/colors" as c;
+@use "../abstracts/variables/fonts" as f;
+
+html {
+  background-color: c.$dark-blue;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+  padding: 1rem;
+  font-family: f.$primary-font;
+  color: c.$light-cyan;
+
+  &::-webkit-scrollbar {
+    width: 0.5rem;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: c.$dark-grayish-blue;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: c.$light-cyan;
+    border-radius: 0.25rem;
+  }
+}

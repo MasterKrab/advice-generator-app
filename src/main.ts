@@ -21,7 +21,7 @@ button.setAttribute("aria-label", "Generate random advice");
 article.appendChild(button);
 
 const image = document.createElement("img");
-image.src = "/public/assets/images/icon-dice.svg";
+image.src = "/assets/images/icon-dice.svg";
 image.alt = "dice";
 button.appendChild(image);
 

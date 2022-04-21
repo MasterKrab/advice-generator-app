@@ -15,12 +15,17 @@
   background-repeat: no-repeat;
   background-position: center calc(100% - 4.5rem);
   background-color: c.$dark-grayish-blue;
+  min-width: 75%;
   max-width: 33.75rem;
   padding: 2.813rem 1.5rem 7.938rem;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
   border-radius: 1rem;
+
+  @media screen and (min-width: 25rem) {
+    min-width: 20rem;
+  }
 
   @media screen and (min-width: 48rem) {
     min-width: 30rem;
